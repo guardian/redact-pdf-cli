@@ -13,7 +13,7 @@ class Conf(arguments: Seq[String]) extends ScallopConf(arguments) {
 object Main {
   def main(args: Array[String]) {
 
-    val pronouns = List("he", "she", "him", "her", "job")
+    val pronouns = List("he", "she", "him", "her")
 
     val conf = new Conf(args)
     PdfRedactor.redact(conf.source(), conf.destination(), conf.redactedWords() ++ pronouns.filterNot(_ => conf.noExcludePronouns()))
