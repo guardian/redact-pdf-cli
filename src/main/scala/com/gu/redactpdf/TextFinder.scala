@@ -1,4 +1,4 @@
-package com.gu.pdfredactor
+package com.gu.redactpdf
 
 import org.apache.pdfbox.pdmodel.PDDocument
 import org.apache.pdfbox.text.{PDFTextStripper, TextPosition}

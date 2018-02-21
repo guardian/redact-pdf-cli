@@ -1,4 +1,4 @@
-package com.gu.pdfredactor
+package com.gu.redactpdf
 
 import org.rogach.scallop.ScallopConf
 

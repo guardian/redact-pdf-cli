@@ -1,4 +1,4 @@
-package com.gu.pdfredactor
+package com.gu.redactpdf
 
 import java.io.File
 import org.apache.pdfbox.pdmodel.{PDDocument, PDPageContentStream}
