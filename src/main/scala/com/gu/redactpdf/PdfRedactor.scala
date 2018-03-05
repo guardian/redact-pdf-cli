@@ -28,7 +28,8 @@ object PdfRedactor {
       val contentStream = new PDPageContentStream(document, page, PDPageContentStream.AppendMode.APPEND, false, true)
       pageData.foreach({ case FoundText(_, x1, y1, x2, y2, _) =>
         contentStream.setNonStrokingColor(Color.BLACK)
-        contentStream.addRect(x1, page.getBBox.getHeight - y1, x2 - x1, y2 - y1)
+        val padding = ((y2 - y1) * 0.3).toFloat
+        contentStream.addRect(x1, page.getBBox.getHeight - y1 - padding, x2 - x1, y2 - y1 + padding)
         contentStream.fill()
       })
       contentStream.close()
