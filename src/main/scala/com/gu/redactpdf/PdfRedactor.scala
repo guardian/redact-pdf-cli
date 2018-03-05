@@ -25,7 +25,7 @@ object PdfRedactor {
 
     blocks.groupBy(_.pageIndex).foreach { case (index, pageData) =>
       val page = allPages.get(index)
-      val contentStream = new PDPageContentStream(document, page, PDPageContentStream.AppendMode.APPEND, false)
+      val contentStream = new PDPageContentStream(document, page, PDPageContentStream.AppendMode.APPEND, false, true)
       pageData.foreach({ case FoundText(_, x1, y1, x2, y2, _) =>
         contentStream.setNonStrokingColor(Color.BLACK)
         contentStream.addRect(x1, page.getBBox.getHeight - y1, x2 - x1, y2 - y1)
