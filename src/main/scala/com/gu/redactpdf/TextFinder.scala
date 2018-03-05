@@ -15,7 +15,7 @@ object TextFinder {
   }
 
   def findMultiple(needle: String, haystack: String): List[Int] =
-    s"\\b$needle\\b".r.findAllMatchIn(haystack).toList.map(_.start)
+    s"(\\b|_|\\.)$needle(\\b|_|\\.)".r.findAllMatchIn(haystack).toList.map(_.start)
 }
 
 class TextFinder(val needle: String) extends PDFTextStripper {
